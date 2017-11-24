@@ -170,7 +170,7 @@ class InstagramScraper(object):
                 end_cursor = container['page_info']['end_cursor']
                 return comments, end_cursor
             else:
-                return iter([])
+                return None, None
         else:
             time.sleep(6)
             return self.__query_comments(shortcode, end_cursor)
